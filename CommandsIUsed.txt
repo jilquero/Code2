@@ -1,0 +1,11 @@
+autoscan
+touch Makefile.am
+aclocal
+automake --add-missing
+touch AUTHORS ChangeLog NEWS README
+libtoolize
+autoconf
+./configure
+make
+make dist
+make distcheck

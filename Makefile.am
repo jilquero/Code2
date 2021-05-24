@@ -1,0 +1,11 @@
+ACLOCAL_AMFLAGS = -I m4
+bin_PROGRAMS = Code2
+Code2_SOURCES = Code2.c
+Code2_DEPENDENCIES = libvolume.la libarea.la
+noinst_LTLIBRARIES = libarea.la
+lib_LTLIBRARIES = libvolume.la
+libvolume_la_SOURCES = volume.c volume.h
+libarea_la_SOURCES = area.c area.h
+libvolume_la_LDFLAGS = -version-info 1:0:0
+Code2_LDADD = libvolume.la libarea.la
+Code2_LDFLAGS = -rpath /usr/local/lib
